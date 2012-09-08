@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 
       client.reconnect(access_token.token, access_token.secret)
       steps_data = client.data_by_time_range('/activities/log/steps', {:base_date => (Date.today - 1.day).strftime('%Y-%m-%d'), :period => "1d"})
+      logger.info steps_data
       number_of_steps = steps_data["activities-log-steps"][0]["value"].to_i
+      logger.info number_of_steps
       current_user.current_steps = number_of_steps
 
       current_user.save
