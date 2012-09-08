@@ -17,4 +17,4 @@
 database.yml
 
 # Ignore sensitive YMLs
-# /config/initializers/api.yml
+/config/initializers/api.yml
