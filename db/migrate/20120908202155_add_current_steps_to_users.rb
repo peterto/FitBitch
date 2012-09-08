@@ -1,4 +1,4 @@
-class AddCurrentStepsToUser < ActiveRecord::Migration
+class AddCurrentStepsToUsers < ActiveRecord::Migration
   def up
     add_column :users, :current_steps, :integer
   end
