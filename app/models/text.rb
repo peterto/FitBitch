@@ -1,23 +1,16 @@
 class Text < ActiveRecord::Base
   belongs_to :user
 
-  attr_accessible :userid, :content, :phone_num
+  attr_accessible :user_id, :content
 
-  @cfg = YAML.load_file("./config/initializers/api.yml")['twilio']
+  @@cfg = YAML.load_file("./config/initializers/api.yml")['twilio']
+  @@account = Twilio::REST::Client.new(@@cfg['account_sid'], @@cfg['auth_token']).account
 
-  @client = Twilio::REST::Client.new(@cfg['account_sid'], @cfg['auth_token'])
-  @account = @client.account
-
-  def new
-    # user = User.find(text.userid)
-
-    puts 'Testing testing testing '
-    twilio = @account.sms.messages.create({
-      :from => @cfg['from_phone'],
-      :to => :phone_num,
-      # :to => '7328581134',
-      # :to => User.find(message.userid.phone_num),
-      :body => :content
+  def send_message
+    twilio = @@account.sms.messages.create({
+      :from => @@cfg['from_phone'],
+      :to => User.find(user_id).phone_number,
+      :body => content
     })
 
     puts twilio

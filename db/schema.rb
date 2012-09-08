@@ -28,9 +28,8 @@ ActiveRecord::Schema.define(:version => 20120908202155) do
   end
 
   create_table "texts", :force => true do |t|
-    t.string   "userid"
+    t.string   "user_id"
     t.string   "content"
-    t.string   "phone_num"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

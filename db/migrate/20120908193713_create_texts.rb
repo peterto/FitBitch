@@ -2,9 +2,8 @@ class CreateTexts < ActiveRecord::Migration
   def change
     create_table :texts do |t|
 
-      t.string :userid
+      t.string :user_id
       t.string :content
-      t.string :phone_num
 
       t.timestamps
     end

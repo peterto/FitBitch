@@ -3,9 +3,13 @@ class TextsController < ApplicationController
     def new
 
       text = Text.new(
-        :content => params[:content],
-        :phone_num => params[:phone_num]
+        :user_id => params[:user_id],
+        :content => params[:content]
       )
+
+      text.send_message
+
+      render text.to_json
 
     end
 
