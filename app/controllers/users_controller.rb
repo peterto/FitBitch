@@ -14,6 +14,6 @@ class UsersController < ApplicationController
     session['fitbit_request_token'] = request_token.token
     session['fitbit_request_secret'] = request_token.secret
 
-    redirect_to "http://www.fitbit.com/oauth/authorize?oauth_token=#{token}"
+    redirect_to "http://www.fitbit.com/oauth/authorize?oauth_token=#{request_token.token}"
   end
 end
