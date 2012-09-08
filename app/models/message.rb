@@ -1,5 +1,5 @@
 class Message < ActiveRecord::Base
     belongs_to :user
 
-    attr_accessible userid, content
+    attr_accessible :userid, :content
 end
