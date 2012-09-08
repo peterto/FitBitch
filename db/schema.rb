@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20120908193717) do
 
   create_table "emails", :force => true do |t|
@@ -40,6 +41,9 @@ ActiveRecord::Schema.define(:version => 20120908193717) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+=======
+ActiveRecord::Schema.define(:version => 20120908202155) do
+>>>>>>> 3e266b8bb015e9d431b0a89a41df83e8f2147ccc
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -58,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20120908193717) do
     t.string   "fitbit_token"
     t.integer  "fitbit_user_id"
     t.string   "fitbit_secret"
+    t.integer  "current_steps"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
