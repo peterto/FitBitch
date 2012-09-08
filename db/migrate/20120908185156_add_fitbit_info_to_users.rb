@@ -4,6 +4,6 @@ class AddFitbitInfoToUsers < ActiveRecord::Migration
   end
 
   def down
-    remove_column :users, :fitbit_secret, :string
+    remove_column :users, :fitbit_secret
   end
 end
