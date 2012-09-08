@@ -5,9 +5,8 @@ FitBitch::Application.routes.draw do
 
   root :to => "home#index"
 
-  resources :admins do
-    resources :messages
-  end
+  resources :messages
+  match "/messages/send_all" => "messages#send_all"
 
   resources :texts, :emails, :tweets
 end
