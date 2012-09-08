@@ -11,9 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120908185304) do
+ActiveRecord::Schema.define(:version => 20120908193717) do
+
+  create_table "emails", :force => true do |t|
+    t.string   "userid"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "messages", :force => true do |t|
+    t.string   "userid"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "texts", :force => true do |t|
+    t.string   "userid"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tweets", :force => true do |t|
     t.string   "userid"
     t.string   "content"
     t.datetime "created_at", :null => false
@@ -36,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20120908185304) do
     t.string   "phone_number"
     t.string   "fitbit_token"
     t.integer  "fitbit_user_id"
+    t.string   "fitbit_secret"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

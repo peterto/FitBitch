@@ -12,10 +12,6 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
-  def fitbit
-
-  end
-
   private
   def after_sign_up_path_for(resource)
     users_fitbit_path

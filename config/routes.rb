@@ -1,10 +1,10 @@
 FitBitch::Application.routes.draw do
   devise_for :users, :controllers => {:registrations => "registrations"}
   # match "registrations/fitbit" => "registrations#fitbit"
-	match "users/fitbit" => "users#fitbit"
-
+	get "users/fitbit" => "users#fitbit"
+  post "users/fitbit_connect" => "users#fitbit_connect"
 
   root :to => "home#index"
 
-  resources :messages
+  resources :texts, :emails, :tweets
 end
