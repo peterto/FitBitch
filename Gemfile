@@ -9,6 +9,8 @@ gem 'pg'
 gem 'twilio-ruby'
 gem 'fitgem'
 gem 'devise'
+gem 'ap'
+gem 'crack'
 
 # Gems used only for assets and not required
 # in production environments by default.
