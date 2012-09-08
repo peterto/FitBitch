@@ -7,10 +7,10 @@ class UsersController < ApplicationController
       current_user.fitbit_token = access_token.token
       current_user.fitbit_secret = access_token.secret
 
-      #client.reconnect(access_token.token, access_token.secret)
-      #steps_data = client.data_by_time_range('/activities/log/steps', {:base_date => (Date.today - 1.day).strftime('%Y-%m-%d'), :period => "1d"})
-      #number_of_steps = steps_data["activities-log-steps"]["value"].to_i
-      #current_user.current_steps = number_of_steps
+      client.reconnect(access_token.token, access_token.secret)
+      steps_data = client.data_by_time_range('/activities/log/steps', {:base_date => (Date.today - 1.day).strftime('%Y-%m-%d'), :period => "1d"})
+      number_of_steps = steps_data["activities-log-steps"][0]["value"].to_i
+      current_user.current_steps = number_of_steps
 
       current_user.save
     end
