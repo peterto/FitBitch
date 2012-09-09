@@ -15,10 +15,20 @@
           <div class="message">
             <% if message.content_id %>
                 <p class="message_type">You got a text message:</p>
-                <p class="content"><%= message.content.message %></p>
+                <% content_msg = message.content.message
+                   if content_msg["STEPS"]
+                     content_msg["STEPS"] = current_user.current_steps.to_s
+                   end
+                %>
+                <p class="content"><%= content_msg %></p>
             <% else %>
                 <p class="message_type">You got an email:</p>
-                <p class="content">Subject: <%= message.meme.subject %></p>
+                <% content_msg = message.meme.subject
+                   if content_msg["STEPS"]
+                     content_msg["STEPS"] = current_user.current_steps.to_s
+                   end
+                %>
+                <p class="content">Subject: <%= content_msg %></p>
                 <%= image_tag message.meme.image_url %>
             <% end %>
 
