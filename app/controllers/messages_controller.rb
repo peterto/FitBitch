@@ -16,6 +16,8 @@ class MessagesController < ApplicationController
           user_id: user.id,
           content: context_message
       ).send_message
+
+      redirect_to :new
     end
   end
 end
