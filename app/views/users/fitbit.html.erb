@@ -1,6 +1,8 @@
-<h1>Users#Fitbit</h1>
+<div class="fitbit_form">
+  <h2>Connect Your Fitbit</h2>
 
-<%= form_for(current_user, :as => :post, :url => users_fitbit_connect_path, :method => :post) do |f| %>
+  <%= form_for(current_user, :as => :post, :url => users_fitbit_connect_path, :method => :post) do |f| %>
 
-    <div><%= f.submit "Connect Fitbit" %></div>
-<% end %>
+      <div><%= button_tag "Connect Fitbit", type: "submit" %></div>
+  <% end %>
+</div>
