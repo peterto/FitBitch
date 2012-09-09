@@ -11,7 +11,6 @@ class Text < ActiveRecord::Base
 
   def send_message
 
-    to_phone = User.find(user_id).phone_number
     request = HTTParty.get('http://fitbitch-api.herokuapp.com/text' +
       '/to/' + User.find(user_id).phone_number +
       '/body/' + content
