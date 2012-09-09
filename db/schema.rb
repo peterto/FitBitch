@@ -42,10 +42,10 @@ ActiveRecord::Schema.define(:version => 20120909091341) do
   end
 
   create_table "texts", :force => true do |t|
-    t.string   "phone_number"
+    t.string   "user_id"
     t.string   "content"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "tweets", :force => true do |t|
