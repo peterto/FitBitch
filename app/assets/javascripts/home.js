@@ -1,6 +1,10 @@
 $(document).ready(function() {
     if ($("body.home.index").length > 0) {
+<<<<<<< HEAD
         updateMessageStatus()
+=======
+        setTimeout(updateMessageStatus, 5000);
+>>>>>>> 112df9be712c2850fe405954f84bffd994a6acf3
     }
 });
 
@@ -25,5 +29,9 @@ function updateMessageStatus() {
         }
     });
 
+<<<<<<< HEAD
     setTimeout(updateMessageStatus, 2000);
+=======
+    setTimeout(updateMessageStatus, 5000);
+>>>>>>> 112df9be712c2850fe405954f84bffd994a6acf3
 }
