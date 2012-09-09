@@ -1,5 +1,6 @@
 <h1>Send Message</h1>
 
-<%= form_tag messages_send_all_path do %>
+<%= form_tag messages_send_one_path do %>
+    <%= select_tag "user", options_from_collection_for_select(@users, "id", "email") %>
     <%= submit_tag "Fire Off Hate Speech" %>
 <% end %>
