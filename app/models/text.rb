@@ -1,4 +1,5 @@
 class Text < ActiveRecord::Base
+  include 'HTTParty'
   belongs_to :user
 
   attr_accessible :user_id, :content
