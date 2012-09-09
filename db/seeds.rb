@@ -23,3 +23,10 @@ users = User.create([
     phone_number: '+18608333149'
   }
 ])
+
+Content.create(message: "This is a message")
+Content.create(message: "You suck man")
+Content.create(message: "Your momma so fat, she jumped up in the air and got suck.")
+Content.create(message: "KEYWORD steps? You're a fat person.")
+Content.create(message: "Only KEYWORD. Congratulations, you made the world fatter.")
+Content.create(message: "Thanks fatty.")
