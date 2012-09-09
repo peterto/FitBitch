@@ -1,0 +1,6 @@
+<h1>Users#Twitter</h1>
+
+<%= form_for(current_user, :as => :post, :url => users_twitter_connect_path, :method => :post) do |f| %>
+
+    <div><%= f.submit "Connect Twitter" %></div>
+<% end %>
