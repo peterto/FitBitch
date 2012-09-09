@@ -1,23 +1,19 @@
-<h2>Sign up</h2>
+<div class="sign_up_form">
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
+    <h2>sign up for fitbitch</h2>
 
-    <div><%= f.label :email %><br />
-    <%= f.email_field :email %></div>
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-    <div><%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number %></div>
+        <div><%= f.email_field :email, :placeholder => "Email" %></div>
 
-    <div><%= f.label :password %><br />
-    <%= f.password_field :password %></div>
+        <div><%= f.text_field :phone_number, :placeholder => "Phone Number" %></div>
 
-    <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %></div>
+        <div><%= f.password_field :password, :placeholder => "Password" %></div>
 
-    <div></div>
+        <div><%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %></div>
+        <br/>
 
-    <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+        <div><%= button_tag "Sign up", :type => "submit" %></div>
+    <% end %>
+</div>
