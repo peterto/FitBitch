@@ -1,3 +1,36 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body.home.index {
+  background-color: #378ea2;
+  div.container {
+    padding-top: 25px;
+    width: 900px;
+    margin: 0 auto;
+    h1 {
+      color: white;
+      font-family: 'Karla', 'Arial';
+      font-size: 45px;
+      margin-top: 0px;
+      margin-bottom: 25px;
+    }
+    div.messages {
+      background-color: white;
+      border: 10px solid #bbb;
+      border-radius: 10px;
+      padding: 10px;
+      div.message {
+        padding:10px;
+        border-bottom: 1px solid #ddd;
+        font-family: "Helvetica Neue", "Arial"
+        p {
+          margin:0;
+        }
+        p.content {
+          color: #404040;
+        }
+        p.timestamp {
+          color: #abc;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
