@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909053526) do
+ActiveRecord::Schema.define(:version => 20120909091341) do
 
   create_table "contents", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -26,11 +26,19 @@ ActiveRecord::Schema.define(:version => 20120909053526) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "memes", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "image_url"
+    t.string   "subject"
+  end
+
   create_table "messages", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.integer  "content_id"
+    t.integer  "meme_id"
   end
 
   create_table "texts", :force => true do |t|
