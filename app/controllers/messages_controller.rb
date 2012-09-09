@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
 
       Text.new.send_message(user, Content.find(rand_id))
 
-      redirect_to new_message_path
     end
+    redirect_to new_message_path
   end
 end
