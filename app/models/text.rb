@@ -4,7 +4,7 @@ class Text < ActiveRecord::Base
 
   def send_message(user, content)
     sample_message = content.message
-    context_message = sample_message.sub(/KEYWORD/, user.current_steps.to_s)
+    context_message = sample_message.sub('STEPS', user.current_steps.to_s)
 
     options = {:body => {:to => user.phone_number, :body => context_message}}
     response = self.class.post('/sms', options)
