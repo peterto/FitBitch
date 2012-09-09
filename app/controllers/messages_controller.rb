@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
     rand_meme_id = rand(Meme.count)+1
 
     Text.new.send_message(user, Content.find(rand_content_id))
+    sleep(2)
     Email.new.send_message(user, Meme.find(rand_meme_id))
 
     redirect_to new_message_path
