@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
           content: context_message
       ).send_message
 
-      redirect_to :new
+      redirect_to new_message_path
     end
   end
 end
