@@ -2,14 +2,15 @@ class Text < ActiveRecord::Base
   include HTTParty
   base_uri "http://fitbitch-api.herokuapp.com"
 
-  attr_accessible :user_id, :content
+  def send_message(user, content)
+    sample_message = content.message
+    context_message = sample_message.sub(/KEYWORD/, user.current_steps.to_s)
 
-  def send_message
-    options = {:body => {:to => user_id, :body => content}}
+    options = {:body => {:to => user.phone_number, :body => context_message}}
     response = self.class.post('/sms', options)
-    logger.info JSON.parse(response.to_json)
+    output = JSON.parse(response)
 
-    # Based on the response, if its good, we store the message in the message model
+    Message.create(user_id: user.id, content_id: content.id) unless output["error"]
   end
 
 end
