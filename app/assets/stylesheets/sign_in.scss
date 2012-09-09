@@ -1,0 +1,64 @@
+body.sessions.new {
+  background-color: #378ea2;
+  div.links {
+    padding-top: 20px;
+    padding-right: 15px;
+    height: 50px;
+    ul {
+      float: right;
+      list-style-type: none;
+      li {
+        margin-right: 15px;
+        a {
+          text-decoration: none;
+          font-size: 18px;
+          border-radius: 5px;
+          padding: 10px 15px;
+          background-color: #4abfd9;
+          width: 200px;
+          color: white;
+          border: none;
+        }
+      }
+    }
+  }
+  div.sign_in_form {
+    padding: 25px;
+    width: 260px;
+    margin: 0 auto;
+    margin-top: 170px;
+    h2 {
+      text-align: center;
+      color: white;
+      font-family: 'Karla', 'Arial';
+      font-size: 35px;
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+    form {
+      text-align: center;
+      input[type='email'], input[type='password'] {
+        border: 1px solid #ddd;
+        padding-top: 0px;
+        padding-left: 10px;
+        height: 43px;
+        font-size: 16px;
+      }
+      .submit {
+        text-align: center;
+      }
+      button {
+        font-size: 18px;
+        border-radius: 5px;
+        padding: 10px 15px;
+        background-color: #4abfd9;
+        width: 200px;
+        color: white;
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
