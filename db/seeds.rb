@@ -25,6 +25,7 @@ Content.create(message: "You walked a whole STEPS feet? You'd totally escape lif
 Content.create(message: "You're a pathetic waste of space. You should have shot yourself STEPS feet ago.")
 Content.create(message: "Yesterday you walked less feet than you were tall when they tried to abort you.")
 Content.create(message: "Great job! Yesterday you walked STEPS feet below the national average!")
+Content.create(message: "You only walked STEPS steps? Congratulations, you just made the world fatter.")
 
 # Walk a lot of steps (Condescending Wonka)
 Meme.create(
