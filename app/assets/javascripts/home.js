@@ -1,6 +1,6 @@
 $(document).ready(function() {
     if ($("body.home.index").length > 0) {
-        setTimeout(updateMessageStatus, 1000);
+        setTimeout(updateMessageStatus, 5000);
     }
 });
 
@@ -25,5 +25,5 @@ function updateMessageStatus() {
         }
     });
 
-    setTimeout(updateMessageStatus, 1000);
+    setTimeout(updateMessageStatus, 5000);
 }
