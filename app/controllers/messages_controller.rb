@@ -12,7 +12,7 @@ class MessagesController < ApplicationController
       sample_message = Content.find(rand_id).message
       context_message = sample_message.sub(/KEYWORD/, user.current_steps.to_s)
 
-      Text.new(
+      SMSApi.new(
           user_id: user.id,
           content: context_message
       ).send_message

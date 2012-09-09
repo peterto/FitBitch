@@ -1,1 +1,9 @@
 <h1>Index Page</h1>
+
+<table>
+    <% @messages.each do |message| %>
+      <tr>
+        <td><%= message.content.message %></td>
+      </tr>
+    <% end %>
+</table>
