@@ -1,7 +1,6 @@
 $(document).ready(function() {
     if ($("body.home.index").length > 0) {
         updateMessageStatus()
-        setTimeout(updateMessageStatus, 5000);
     }
 });
 
