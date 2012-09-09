@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
       context_message = sample_message.sub(/KEYWORD/, user.current_steps.to_s)
 
       SMSApi.new(
-          user_id: user.id,
+          user_id: user.phone_number,
           content: context_message
       ).send_message
 
