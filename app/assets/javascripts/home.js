@@ -6,7 +6,6 @@ $(document).ready(function() {
 
 function updateMessageStatus() {
 
-    // greatest of messages id to pass in
     var msg_count = $("table tr").length;
 
     $.ajax({
@@ -16,7 +15,7 @@ function updateMessageStatus() {
         dataType:"json",
         data: {msg_count: msg_count},
         success: function(data) {
-            $("table").append("<tr><td>"+data.msg_content+"</td></tr>")
+            $("table").prepend('<tr><td>'+data.msg_content+'</td></tr>')
         }
     });
 
