@@ -28,29 +28,46 @@ class UsersController < ApplicationController
   end
 
   def twitter
-    @consumer = OAuth::Consumer.new( ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"], {
-      :site => "https://api.twitter.com"
-    })
+    # if params[:oauth_token]
+    #   # @consumer = OAuth::Consumer.new( ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"], {
+    #   #   :site => "https://api.twitter.com"
+    #   # })
 
-    @request_token = @consumer.get_request_token
-    
-    # p @request_token.get_access_token
+    #   @consumer = OAuth::Consumer.new( "bwoXeWHyc1FBEMCETfs8Q", "vFv0EvxRgCN4Xizdsss2JXkF7r7hEagRIFVjzCKlso", {
+    #     :site => "https://api.twitter.com"
+    #   })
 
-    session[:request_token] = @request_token
-    redirect_to @request_token.authorize_url
+    #   @request_token = @consumer.get_request_token
+      
+    #   # p @request_token.get_access_token
 
-    # @access_token = @request_token.get_access_token
-    
-    # current_user.twitter_token = @access_token.token 
-    # current_user.twitter_secret = @access_token.secret
+    #   session[:request_token] = @request_token
+    #   redirect_to @request_token.authorize_url
 
-    # session[:request_token] = @request_token
+    #   # @access_token = @request_token.get_access_token
+      
+    #   # current_user.twitter_token = @access_token.token 
+    #   # current_user.twitter_secret = @access_token.secret
 
+    #   # session[:request_token] = @request_token
 
-    current_user.save
+    #   current_user.save
+    # end
   end
 
   def twitter_connect
+
+      # @consumer = OAuth::Consumer.new( "bwoXeWHyc1FBEMCETfs8Q", "vFv0EvxRgCN4Xizdsss2JXkF7r7hEagRIFVjzCKlso", {
+      #   :site => "https://api.twitter.com"
+      # })
+
+      # @request_token = @consumer.get_request_token
+      
+      # # p @request_token.get_access_token
+
+      # session[:request_token] = @request_token
+      # # redirect_to "https://api.twitter.com/oauth/request_token?oauth_token=#{@request_token.token}&auth_callback='http://http://fitbitch.herokuapp.com/users/twitter'"
+      # redirect_to @request_token.authorize_url
 
   end
 end
