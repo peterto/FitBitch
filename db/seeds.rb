@@ -10,16 +10,16 @@ users = User.create([
   {
     email: 'ankitaggarwal@gmail.com',
     password: 'ankita',
-    phone_number: '7328581134'
+    phone_number: '+17328581134'
   },
   {
     email: 'sb1752@gmail.com',
     password: 'sb1752',
-    phone_number: ''
+    phone_number: '+17329397743'
   },
   {
     email: 'pt9386@gmail.com',
     password: 'pt9386',
-    phone_number: ''
+    phone_number: '+18608333149'
   }
 ])
