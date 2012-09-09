@@ -1,6 +1,15 @@
 body.home.index {
   background-color: #378ea2;
+  div.top_bar {
+    height: 6px;
+    background-color: #4abfd9;
+  }
   div.container {
+    a {
+      float: right;
+      color: white;
+      text-decoration: none;
+    }
     padding-top: 25px;
     width: 900px;
     margin: 0 auto;
@@ -13,18 +22,18 @@ body.home.index {
     }
     div.messages {
       background-color: white;
-      border: 10px solid #bbb;
+      border: 10px solid #4abfd9;
       border-radius: 10px;
       padding: 10px;
       div.message {
         padding:10px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #81CBDB;
         font-family: "Helvetica Neue", "Arial"
         p {
           margin:0;
         }
         p.content {
-          color: #404040;
+          color: #5F6769;
         }
         p.timestamp {
           color: #abc;

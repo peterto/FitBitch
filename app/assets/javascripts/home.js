@@ -15,7 +15,8 @@ function updateMessageStatus() {
         dataType:"json",
         data: {msg_count: msg_count},
         success: function(data) {
-            $("div.messages").prepend('<div class="message"><p class="content">'+data.msg_content+'</p><p class="timestamp">'+data.created_at+'</p></div>')
+            $("div.messages").prepend('<div class="message new" style="display:none;"><p class="content">'+data.msg_content+'</p><p class="timestamp">'+data.created_at+'</p></div>')
+            $("div.message.new").show("slow")
         }
     });
 
