@@ -7,7 +7,8 @@ FitBitch::Application.routes.draw do
   match "/home/check_status" => "home#check_status"
 
   resources :messages
-  match "/messages/send_all" => "messages#send_all"
+  match "/messages/send_sms" => "messages#send_sms"
+  match "/messages/send_email" => "messages#send_email"
 
   resources :texts, :emails, :tweets
 end

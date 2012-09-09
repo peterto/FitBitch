@@ -14,7 +14,9 @@ class UsersController < ApplicationController
       logger.info number_of_steps
       current_user.current_steps = number_of_steps
 
-      current_user.save
+      if current_user.save
+        redirect_to root_path
+      end
     end
   end
 

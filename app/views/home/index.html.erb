@@ -1,12 +1,29 @@
+<div class="top_bar">
+
+</div>
 <div class="container">
+  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete%>
   <h1>fitbitch</h1>
 
-    <div class="messages">
-      <% @messages.each do |message| %>
-        <div class="message">
-            <p class="content"><%= message.content.message %></p>
+        <div class="messages">
+        <% if @messages.empty? %>
+            <div class="happy_msg">
+              <p>Yay looks like you're off to a great start! Best of luck, champ!</p>
+            </div>
+        <% end %>
+        <% @messages.each do |message| %>
+          <div class="message">
+            <% if message.content_id %>
+                <p class="message_type">You got a text message:</p>
+                <p class="content"><%= message.content.message %></p>
+            <% else %>
+                <p class="message_type">You got an email:</p>
+                <p class="content">Subject: <%= message.meme.subject %></p>
+                <%= image_tag message.meme.image_url %>
+            <% end %>
+
             <p class="timestamp"><%= message.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%Y-%m-%d %I:%M%p") %></p>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
     </div>
 </div>

@@ -1,0 +1,32 @@
+body.users.fitbit {
+  background-color: #378ea2;
+  div.fitbit_form {
+    padding: 25px;
+    width: 260px;
+    margin: 0 auto;
+    margin-top: 170px;
+    h2 {
+      text-align: center;
+      color: white;
+      font-family: 'Karla', 'Arial';
+      font-size: 35px;
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+    form {
+      text-align: center;
+      button {
+        font-size: 18px;
+        border-radius: 5px;
+        padding: 10px 15px;
+        background-color: #4abfd9;
+        width: 200px;
+        color: white;
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

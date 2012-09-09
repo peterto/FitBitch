@@ -1,6 +1,6 @@
 $(document).ready(function() {
     if ($("body.home.index").length > 0) {
-        setTimeout(updateMessageStatus, 1000);
+        updateMessageStatus()
     }
 });
 
@@ -15,7 +15,13 @@ function updateMessageStatus() {
         dataType:"json",
         data: {msg_count: msg_count},
         success: function(data) {
-            $("div.messages").prepend('<div class="message"><p class="content">'+data.msg_content+'</p><p class="timestamp">'+data.created_at+'</p></div>')
+            if(data.type === 'text') {
+                $("div.messages").prepend('<div class="message new" style="display:none;"><p class="message_type">You got a text msg:</p><p class="content">'+data.msg_content+'</p><p class="timestamp">'+data.created_at+'</p></div>');
+                $("div.message.new").show("slow");
+            } else {
+                $("div.messages").prepend('<div class="message new" style="display:none;"><p class="message_type">You got an email:</p><p class="content">Subject: '+data.subject+'</p><img src="'+data.meme_image_url+'"/><p class="timestamp">'+data.created_at+'</p></div>');
+                $("div.message.new").show("slow");
+            }
         }
     });
 
