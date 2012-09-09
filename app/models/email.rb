@@ -2,7 +2,7 @@ class Email < ActiveRecord::Base
   include HTTParty
   base_uri "http://fitbitch-api.herokuapp.com"
 
-  def send_message(user, meme)
+  def send_message(user, meme, subject=nil)
     subject = meme.subject
     if subject["STEPS"]
       subject["STEPS"] = user.current_steps.to_s

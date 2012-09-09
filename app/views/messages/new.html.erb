@@ -9,3 +9,7 @@
     <%= select_tag "user", options_from_collection_for_select(@users, "id", "email") %>
     <%= submit_tag "Email" %>
 <% end %>
+
+<%= form_tag messages_send_email_all_path do %>
+    <%= submit_tag "Email All" %>
+<% end %>
