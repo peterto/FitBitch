@@ -25,5 +25,5 @@ function updateMessageStatus() {
         }
     });
 
-    setTimeout(updateMessageStatus, 2000);
+    setTimeout(updateMessageStatus, 1000);
 }
