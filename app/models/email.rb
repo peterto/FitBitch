@@ -4,6 +4,8 @@ class Email < ActiveRecord::Base
 
   def send_message(user, meme, subject=nil)
     subject = meme.subject
+    puts user.inspect
+    puts user.current_steps
     if subject["STEPS"]
       subject["STEPS"] = user.current_steps.to_s
     end

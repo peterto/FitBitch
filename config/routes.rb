@@ -13,6 +13,7 @@ FitBitch::Application.routes.draw do
   match "/messages/send_sms" => "messages#send_sms"
   match "/messages/send_email" => "messages#send_email"
   match "/messages/send_email_all" => "messages#send_email_all"
+  match "/messages/send_email_pete" => "messages#send_email_pete"
 
   resources :texts, :emails, :tweets
 end

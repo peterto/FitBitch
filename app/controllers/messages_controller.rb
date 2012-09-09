@@ -20,10 +20,14 @@ class MessagesController < ApplicationController
   end
 
   def send_email(user=nil, subject=nil, rand_meme_id=nil)
-    if user
-      subject["FIRST_NAME"] = user.email if subject["FIRST_NAME"]
-    else
-      user = User.find(params[:user]) unless user
+    user = User.find(params[:user]) unless user
+    logger.info(user)
+    puts user.inspect
+    puts user.email
+    puts user.current_steps
+
+    if subject.to_s["FIRST_NAME"]
+      subject["FIRST_NAME"] = user.email
     end
 
     rand_meme_id = rand(Meme.count)+1 unless rand_meme_id
@@ -43,6 +47,15 @@ class MessagesController < ApplicationController
     User.all.each { |user| 
       send_email(user, "Fitness levels ain't looking so good for FIRST_NAME", rand_meme_id)
     }
+
     redirect_to new_message_path
+  end
+
+  def send_email_pete
+    send_email(
+      User.where(:email => 'pt9386@gmail.com')[0],
+      nil,
+      Meme.where(:image_url => 'http://cdn.memegenerator.net/instances/400x/26423750.jpg')[0]
+    )
   end
 end

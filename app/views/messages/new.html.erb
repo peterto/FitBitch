@@ -1,8 +1,11 @@
 <h1>Send Message</h1>
 
-<%= form_tag messages_send_sms_path do %>
-    <%= select_tag "user", options_from_collection_for_select(@users, "id", "email") %>
-    <%= submit_tag "SMS" %>
+<%= form_tag messages_send_email_pete_path do %>
+    <%= submit_tag "Email Pete" %>
+<% end %>
+
+<%= form_tag messages_send_email_all_path do %>
+    <%= submit_tag "Email All" %>
 <% end %>
 
 <%= form_tag messages_send_email_path do %>
@@ -10,6 +13,8 @@
     <%= submit_tag "Email" %>
 <% end %>
 
-<%= form_tag messages_send_email_all_path do %>
-    <%= submit_tag "Email All" %>
+<%= form_tag messages_send_sms_path do %>
+    <%= select_tag "user", options_from_collection_for_select(@users, "id", "email") %>
+    <%= submit_tag "SMS" %>
 <% end %>
+
