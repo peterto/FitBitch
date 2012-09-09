@@ -11,8 +11,9 @@ class MessagesController < ApplicationController
       rand_id = rand(Content.count)+1
 
       Text.new.send_message(user, Content.find(rand_id))
+      Email.new.send_message(user, Content.find(rand_id))
 
-      redirect_to new_message_path
     end
+    redirect_to new_message_path
   end
 end
