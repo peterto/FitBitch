@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
 
   def send_all
     User.all.each do |user|
-      offset = rand(User.count)
+      offset = rand(Content.count)
       sample_message = Content.find(:offset => offset).message
       context_message = sample_message.sub(/KEYWORD/, user.current_steps)
 
