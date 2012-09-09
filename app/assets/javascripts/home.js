@@ -16,10 +16,10 @@ function updateMessageStatus() {
         data: {msg_count: msg_count},
         success: function(data) {
             if(data.type === 'text') {
-                $("div.messages").prepend('<div class="message new" style="display:none;"><p>You got a text msg:</p><p class="content">'+data.msg_content+'</p><p class="timestamp">'+data.created_at+'</p></div>');
+                $("div.messages").prepend('<div class="message new" style="display:none;"><p class="message_type">You got a text msg:</p><p class="content">'+data.msg_content+'</p><p class="timestamp">'+data.created_at+'</p></div>');
                 $("div.message.new").show("slow");
             } else {
-                $("div.messages").prepend('<div class="message new" style="display:none;"><p>You got an email:</p><p class="content">Subject: '+data.subject+'</p><img src="'+data.meme_image_url+'"/><p class="timestamp">'+data.created_at+'</p></div>');
+                $("div.messages").prepend('<div class="message new" style="display:none;"><p class="message_type">You got an email:</p><p class="content">Subject: '+data.subject+'</p><img src="'+data.meme_image_url+'"/><p class="timestamp">'+data.created_at+'</p></div>');
                 $("div.message.new").show("slow");
             }
         }
