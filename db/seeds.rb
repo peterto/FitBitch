@@ -10,17 +10,20 @@ users = User.create([
   {
     email: 'ankitaggarwal@gmail.com',
     password: 'ankita',
-    phone_number: '+17328581134'
+    phone_number: '+17328581134',
+    current_steps: 500
   },
   {
     email: 'sb1752@gmail.com',
     password: 'sb1752',
-    phone_number: '+17329397743'
+    phone_number: '+17329397743',
+    current_steps: 5000
   },
   {
     email: 'pt9386@gmail.com',
     password: 'pt9386',
-    phone_number: '+18608333149'
+    phone_number: '+18608333149',
+    current_steps: 10000
   }
 ])
 
