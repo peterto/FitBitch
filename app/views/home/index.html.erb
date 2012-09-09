@@ -6,6 +6,13 @@
   <h1>fitbitch</h1>
 
     <div class="messages">
+      <% if @messages.empty? %>
+        <div class="happy_msg">
+          <p>Yay looks like you're off to a great start! Best of luck, champ!</p>
+        </div>
+      <% else %>
+
+      <% end %>
       <% @messages.each do |message| %>
         <div class="message">
             <p class="content"><%= message.content.message %></p>
