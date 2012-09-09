@@ -28,15 +28,26 @@ class UsersController < ApplicationController
   end
 
   def twitter
-    @consumer=OAuth::Consumer.new( ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"], {
-      :site=>"https://api.twitter.com/oauth/request_token"
+    @consumer = OAuth::Consumer.new( ENV["TWITTER_CONSUMER_KEY"], ENV["TWITTER_CONSUMER_SECRET"], {
+      :site => "https://api.twitter.com"
     })
 
     @request_token = @consumer.get_request_token
+    
+    # p @request_token.get_access_token
+
     session[:request_token] = @request_token
     redirect_to @request_token.authorize_url
 
-    @access_token = @request_token.get_access_token
+    # @access_token = @request_token.get_access_token
+    
+    # current_user.twitter_token = @access_token.token 
+    # current_user.twitter_secret = @access_token.secret
+
+    # session[:request_token] = @request_token
+
+
+    current_user.save
   end
 
   def twitter_connect

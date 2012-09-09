@@ -3,6 +3,9 @@ FitBitch::Application.routes.draw do
 	get "users/fitbit" => "users#fitbit"
   post "users/fitbit_connect" => "users#fitbit_connect"
 
+  get "users/twitter" => "users#twitter"
+	post "users/twitter_connect" => "users#twitter_connect"
+
   root :to => "home#index"
   match "/home/check_status" => "home#check_status"
 

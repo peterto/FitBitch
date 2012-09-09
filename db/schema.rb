@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120909091341) do
+ActiveRecord::Schema.define(:version => 20120909153107) do
 
   create_table "contents", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -73,6 +73,9 @@ ActiveRecord::Schema.define(:version => 20120909091341) do
     t.integer  "fitbit_user_id"
     t.string   "fitbit_secret"
     t.integer  "current_steps"
+    t.string   "twitter_token"
+    t.string   "twitter_secret"
+    t.string   "twitter_username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
